@@ -1,0 +1,90 @@
+
+<div class="search-div">
+    <button mat-raised-button (click)="onCreate()">
+      <mat-icon>add</mat-icon>Create
+    </button>
+    <mat-form-field class="search-form-field" floatLabel="never">
+      <!-- <input matInput (keyup)="applyFilter($event)" #input autocomplete="off"/> -->
+      <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter($event)">
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey"  (click)="onSearchClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+</div>
+
+<div class="mat-elevation-z8">
+    <mat-table [dataSource]="listGet"  matSort>
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="middleName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Middle Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.middleName}} </td>
+      </ng-container>
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let row; let i = index">
+          <!-- onEdit not working   -->
+          <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
+          <button mat-icon-button color="warn" (click)="onDelete(row)"><mat-icon>delete_outline</mat-icon></button>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          Loading data...
+        </mat-footer-cell>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listGet!=null}"></mat-footer-row>
+    </mat-table>
+</div>    
+
+     <!-- <div>
+      <table mat-table [dataSource]="listGet" class="mat-elevation-z8">
+
+      
+      
+      
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef> First Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="middleName">
+          <th mat-header-cell *matHeaderCellDef> Middle Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.middleName}} </td>
+        </ng-container>
+      
+     
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef> Last Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>  
+       -->
+
+
+

@@ -1,0 +1,23 @@
+<div class="bg" fxLayoutAlign="center center">
+  <mat-card class="card mat-elevation-z8">
+    <form [formGroup]="newPassForm">
+      <div fxLayout="column" fxLayoutGap="10px" fxFlex="100">
+        <div class="card-title">
+          <p> Create Password </p>
+        </div>
+
+        <mat-form-field appearance="outline" fxFlex>
+          <mat-label>Enter New Password</mat-label>
+          <input matInput placeholder="password" formControlName="password">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxFlex>
+          <mat-label>Confirm Password</mat-label>
+          <input matInput placeholder="password" formControlName="rePassword">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" fxFlex (click)="onResetPassword()">Submit</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

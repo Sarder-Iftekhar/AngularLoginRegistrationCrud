@@ -1,0 +1,33 @@
+<div class="bg" fxLayoutAlign="center center">
+  <mat-card class="card mat-elevation-z8">
+    <form [formGroup]="signUpForm" autocomplete="off">
+      <div fxLayout="column" fxLayoutGap="10px" fxFlex="100">
+        <div class="card-title">
+          <p> Registration </p>
+        </div>
+
+        <mat-form-field appearance="outline" fxFlex>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="example@mail.com" formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxFlex>
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="Your first name" formControlName="firstName">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxFlex>
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Your last name" formControlName="lastName">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxFlex>
+          <mat-label>Phone No.</mat-label>
+          <input matInput placeholder="01XXXXXXXXX" formControlName="phoneNumber">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

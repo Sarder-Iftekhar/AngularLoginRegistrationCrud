@@ -1,0 +1,59 @@
+<div class="bg" fxLayoutAlign="center center">
+  <mat-card class="card mat-elevation-z8">
+    <form [formGroup]="loginForm">
+      <div fxLayout="column" fxLayoutGap="10px" fxFlex="100">
+        <div class="card-title">
+          <p> Login </p>
+        </div>
+
+        <mat-form-field appearance="outline" fxFlex>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="example@mail.com" formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxFlex>
+          <mat-label>Enter your password</mat-label>
+          <input matInput placeholder="example@mail.com" formControlName="password">
+          <input matInput [type]="hide ? 'password' : 'password'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <!-- <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
+          </button>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" fxFlex (click)="onContact()">Login</button>
+        <button mat-raised-button color="primary" fxFlex (click)="onOtpSuccess()">Create New Contact</button>
+
+        <!-- <div fxLayout="column">
+      <div style="color:black">
+        <h1> Login</h1>
+      </div>
+      <div style="color:black">
+        <h3> Enter Email</h3>
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" required>
+
+      </mat-form-field>
+      <div style="color:black">
+        <h3> Enter password</h3>
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field> -->
+
+        <!-- <button type="login" class="btn" (click)="onContact()">login</button>
+      <button type="create new contact" class="btn" (click)="onOtpSuccess()">create new contact</button>
+    </div> -->
+      </div>
+    </form>
+  </mat-card>
+</div>

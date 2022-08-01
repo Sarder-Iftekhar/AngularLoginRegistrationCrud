@@ -1,0 +1,21 @@
+.bg {
+  background-image: url("https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_960_720.jpg");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card {
+  background-color: #c0ddff;
+  padding: 30px;
+  width: 25%;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #004ec4;
+  text-align: center;
+  padding: 10px;
+}

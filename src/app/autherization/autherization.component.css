@@ -1,0 +1,52 @@
+/************* Angular Mat Data Table Start *************/
+.mat-data-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /*Header height*/
+  .mat-data-table tr.mat-header-row {
+    height: 40px !important;
+  }
+  
+  /*Header backGroud color - Font color -border - padding */
+  .mat-data-table th.mat-header-cell {
+    background-color: #87acfa;
+    color: white;
+    border: 1px solid hsl(212, 33%, 84%) !important;
+    padding: 0 5px;
+  }
+  
+  /*data row align - height*/
+  .mat-data-table tr.mat-row {
+    /* text-align: center; */
+    height: 35px !important;
+  }
+  
+  /*data row border - padding*/
+  .mat-data-table td.mat-cell {
+    border: 1px solid #bdd9f8 !important;
+    padding: 2px 5px;
+  }
+  
+  .mat-data-table tr:nth-child(even) {
+    background: #eff2f7;
+  }
+  
+  .mat-data-table .mat-sort-header-arrow {
+    color: #fff;
+  }
+  
+  .mat-table-action {
+    width: 55px;
+  }
+  
+  /************ Angular Mat Data Table End *************/
+
+  .card-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #004ec4;
+    text-align: center;
+    padding: 10px;
+  }
